@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="LunaCycle helps you estimate your next period and understand your menstrual cycle.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LunaCycle | Menstrual Cycle Calculator</title>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="luna.css">
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <!-- Logo -->
+            <a href="#home" class="logo" aria-label="LunaCycle home">
+                <span class="logo-icon" aria-hidden="true">🌹</span>
+                <span class="logo-text">Luna<span>Cycle</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#cycle-guide">Cycle Guide</a></li>
+            </ul>
+
+            <a href="#calculator" class="nav-button">
+                Calculate My Cycle
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="container hero-content">
+                <p class="hero-label">YOUR CYCLE, YOUR WELLNESS</p>
+                <h1>Get to Know Your<span>Cycle</span></h1>
+                <p class="hero-description">Understand your menstrual cycle with a simple, supportive tool that helps you estimate your next period, ovulation, and fertile window.</p>
+                <a href="#calculator" class="primary-button">Calculate My Cycle</a>
+                <a href="#how-it-works" class="secondary-button">Learn How It Works</a>
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS SECTION -->
+        <section class="how-it-works section-padding" id="how-it-works">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">SIMPLE AND EASY</p>
+                    <h2>How It Works</h2>
+                    <p>Get an estimate of your cycle in three simple steps.</p>
+                </div>
+
+                <div class="steps-container">
+                    <article class="step-card">
+                        <span class="step-number">01</span>
+                        <h3>Enter Your Period Date</h3>
+                        <p>Select the first day of your most recent period.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <span class="step-number">02</span>
+                        <h3>Enter Your Cycle Length</h3>
+                        <p>Enter your average menstrual cycle length in days.</p>
+                    </article>
+
+                    <article class="step-card">
+                        <span class="step-number">03</span>
+                        <h3>View Your Estimates</h3>
+                        <p>See your estimated next period, ovulation date, and fertile window.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CYCLE CALCULATOR SECTION -->
+        <section class="calculator-section section-padding" id="calculator">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">YOUR PERSONAL CYCLE ESTIMATE</p>
+                    <h2>Cycle Calculator</h2>
+                    <p>Enter your cycle information below to get started.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="cycleForm">
+
+                        <div class="form-group">
+                            <label for="lastPeriod">First Day of Your Last Period</label>
+                            <input type="date" id="lastPeriod" name="lastPeriod" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cycleLength">Average Cycle Length (Days)</label>
+                            <input type="number" id="cycleLength" name="cycleLength" min="21" max="35" value="28" step="1" required>
+                            <small>Many adult menstrual cycles fall between 21 and 35 days, but individual patterns vary.</small>
+                        </div>
+
+                        <button type="submit" class="primary-button">Calculate My Cycle</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- RESULTS SECTION -->
+        <section class="results-section section-padding" id="results">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">YOUR CYCLE OVERVIEW</p>
+                    <h2>Your Cycle Results</h2>
+                    <p>Here are your estimated cycle dates.</p>
+                </div>
+
+                <div class="results-container">
+
+                    <article class="result-card">
+                        <span class="result-icon" aria-hidden="true">🌸</span>
+                        <h3>Next Expected Period</h3>
+                        <p class="result-date" id="nextPeriodResult" aria-live="polite">Enter your details to see your estimate.</p>
+                    </article>
+
+                    <article class="result-card">
+                        <span class="result-icon" aria-hidden="true">🌷</span>
+                        <h3>Estimated Ovulation</h3>
+                        <p class="result-date" id="ovulationResult" aria-live="polite">Your estimated ovulation date will appear here.</p>
+                    </article>
+
+                    <article class="result-card">
+                        <span class="result-icon" aria-hidden="true">🌼</span>
+                        <h3>Estimated Fertile Window</h3>
+                        <p class="result-date" id="fertileWindowResult" aria-live="polite">Your estimated fertile window will appear here.</p>
+                    </article>
+
+                </div>
+
+                <p class="results-note">These dates are estimates and may differ from your actual menstrual cycle.</p>
+
+            </div>
+        </section>
+
+
+        <!-- CYCLE GUIDE SECTION -->
+        <section class="cycle-guide section-padding" id="cycle-guide">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">UNDERSTAND YOUR BODY</p>
+                    <h2>The Four Phases of Your Cycle</h2>
+                    <p>Learn about the four phases of the menstrual cycle.</p>
+                </div>
+
+                <div class="phases-container">
+                    <article class="phase-card">
+                        <span class="phase-number">01</span>
+                        <h3>Menstruation</h3>
+                        <p>The uterine lining sheds, resulting in menstrual bleeding. This marks the beginning of the menstrual cycle.</p>
+                    </article>
+
+                    <article class="phase-card">
+                        <span class="phase-number">02</span>
+                        <h3>Follicular Phase</h3>
+                        <p>Hormonal changes support the development of ovarian follicles, and the uterine lining begins to build up again.</p>
+                    </article>
+
+                    <article class="phase-card">
+                        <span class="phase-number">03</span>
+                        <h3>Ovulation</h3>
+                        <p>An ovary releases an egg. The timing varies, and a calendar estimate cannot confirm when ovulation actually occurs.</p>
+                    </article>
+
+                    <article class="phase-card">
+                        <span class="phase-number">04</span>
+                        <h3>Luteal Phase</h3>
+                        <p>After ovulation, hormonal changes prepare the uterine lining. If pregnancy does not occur, another period usually begins.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section section-padding" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <p class="section-label">ABOUT LUNACYCLE</p>
+                    <h2>A Little More Awareness, Every Month</h2>
+                    <p>LunaCycle is a menstrual cycle education project designed to make cycle tracking easier to understand.</p>
+                    <p>Our goal is to help users learn about their menstrual cycle and explore estimated period, ovulation, and fertile-window dates in one simple place.</p>
+                    <p>LunaCycle provides educational estimates and is not a substitute for professional medical advice.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; AJAYI KAYODE AYODEJI . 2026 LunaCycle . Reproductive Health Educational Project.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="luna.js"></script>
+
+</body>
+</html>

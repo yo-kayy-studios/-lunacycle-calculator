@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =========================
+   LUNACYCLE — CSS STYLES
+   ========================= */
+
+/* 1. COLOR PALETTE & VARIABLES */
+:root {
+    --rose-pink: #D96C8A;
+    --light-blush: #FFF4F6;
+    --white: #FFFFFF;
+    --charcoal: #29252B;
+    --soft-grey: #756D73;
+    --pale-rose: #F4DDE4;
+    --deep-rose: #A83F60;
+
+    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+
+    --container-width: 1120px;
+    --section-padding: 80px 0;
+
+    --shadow-soft: 0 8px 30px rgba(168, 63, 96, 0.08);
+    --shadow-card: 0 12px 35px rgba(41, 37, 43, 0.07);
+
+    --border-radius: 18px;
+    --border-radius-small: 12px;
+}
+
+/* 2. RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    background-color: var(--white);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    color: var(--charcoal);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    color: var(--soft-grey);
+}
+
+.container {
+    width: min(90%, var(--container-width));
+    margin: 0 auto;
+}
+
+section {
+    padding: var(--section-padding);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading p {
+    margin-top: 15px;
+}
+
+/* Small pill labels (hero + section headings) */
+.hero-label,
+.section-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 7px 15px;
+    border-radius: 50px;
+    background-color: var(--pale-rose);
+    color: var(--deep-rose);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+/* 3. BUTTONS */
+.primary-button,
+.secondary-button,
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.primary-button,
+.nav-button {
+    color: var(--white);
+    background-color: var(--rose-pink);
+}
+
+.primary-button:hover,
+.nav-button:hover {
+    background-color: var(--deep-rose);
+}
+
+.secondary-button {
+    color: var(--deep-rose);
+    background-color: var(--white);
+    border-color: var(--pale-rose);
+}
+
+.secondary-button:hover {
+    border-color: var(--rose-pink);
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.nav-button:focus-visible {
+    outline: 3px solid var(--pale-rose);
+    outline-offset: 2px;
+}
+
+/* 4. HEADER & NAVIGATION */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--pale-rose);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    font-size: 1.7rem;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--charcoal);
+}
+
+.logo-text span {
+    color: var(--rose-pink);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--soft-grey);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--deep-rose);
+}
+
+.nav-button {
+    flex-shrink: 0;
+}
+
+/* 5. HERO SECTION */
+.hero-section {
+    padding: 90px 0;
+    background-color: var(--light-blush);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero-section h1 {
+    margin-bottom: 22px;
+}
+
+/* span on its own line, which also fixes the missing space */
+.hero-section h1 span {
+    display: block;
+    color: var(--rose-pink);
+}
+
+.hero-description {
+    max-width: 580px;
+    margin: 0 auto 32px;
+    font-size: 1.05rem;
+}
+
+.hero-content .primary-button,
+.hero-content .secondary-button {
+    margin: 6px;
+}
+
+/* 6. HOW IT WORKS */
+.how-it-works {
+    background-color: var(--white);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.step-card {
+    padding: 32px 25px;
+    border: 1px solid var(--pale-rose);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    text-align: center;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: var(--light-blush);
+    color: var(--deep-rose);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+}
+
+/* 7. CYCLE CALCULATOR */
+.calculator-section {
+    background-color: var(--light-blush);
+}
+
+.calculator-card {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 35px;
+    border: 1px solid var(--pale-rose);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 15px;
+    border: 1px solid #E4D6DB;
+    border-radius: var(--border-radius-small);
+    background-color: var(--white);
+    color: var(--charcoal);
+}
+
+.form-group input:focus {
+    border-color: var(--rose-pink);
+    outline: 2px solid var(--pale-rose);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 7px;
+    color: var(--soft-grey);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.calculator-card .primary-button {
+    width: 100%;
+}
+
+/* 8. RESULTS */
+.results-section {
+    background-color: var(--white);
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.result-card {
+    padding: 28px 23px;
+    border: 1px solid var(--pale-rose);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.result-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+.result-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.result-date {
+    color: var(--deep-rose);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.results-note {
+    max-width: 800px;
+    margin: 28px auto 0;
+    padding: 18px;
+    border-radius: var(--border-radius-small);
+    background-color: var(--light-blush);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* 9. CYCLE GUIDE */
+.cycle-guide {
+    background-color: var(--light-blush);
+}
+
+.phases-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.phase-card {
+    padding: 28px;
+    border: 1px solid var(--pale-rose);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+.phase-number {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--rose-pink);
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.phase-card h3 {
+    margin-bottom: 10px;
+}
+
+.phase-card p {
+    font-size: 0.95rem;
+}
+
+/* 10. ABOUT SECTION */
+.about-section {
+    background-color: var(--white);
+}
+
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+/* 11. FOOTER */
+.site-footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--pale-rose);
+    background-color: var(--light-blush);
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+}
+
+/* 12. RESPONSIVE DESIGN */
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+    :root {
+        --section-padding: 65px 0;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 700px) {
+    .steps-container,
+    .results-container,
+    .phases-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    :root {
+        --section-padding: 55px 0;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: min(92%, var(--container-width));
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 0.88rem;
+    }
+
+    .nav-button {
+        width: 100%;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .calculator-card {
+        padding: 25px 20px;
+    }
+
+    .result-card,
+    .phase-card {
+        padding: 23px 20px;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 1.35rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .nav-button {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+
+    .hero-content .primary-button,
+    .hero-content .secondary-button {
+        display: flex;
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .nav-button,
+    .nav-links a {
+        transition: none;
+    }
+}
