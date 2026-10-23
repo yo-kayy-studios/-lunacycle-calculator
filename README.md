@@ -34,7 +34,7 @@ These are calendar-based estimates. Actual cycles vary, so results may differ fr
 
 ```text
 lunacycle-calculator/
-├── luna.html
+├── index.html
 ├── luna.css
 ├── luna.js
 └── README.md
@@ -44,7 +44,7 @@ lunacycle-calculator/
 
 1. Download or clone this repository.
 2. Keep all files in the same folder.
-3. Open `luna.html` in any web browser.
+3. Open `index.html` in any web browser.
 
 No installation or internet connection is needed, apart from loading the Google Fonts.
 
